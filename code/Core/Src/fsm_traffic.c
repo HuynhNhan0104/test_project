@@ -98,21 +98,11 @@ void fsm_system_run(){
 			set_timer(5, duration_time_of_GREEN);
 			//STATE STRANSITION
 			mode = NORMAL_MODE;
-
-			//test
-			state_led_traffic_1 = GREEN;
-			state_led_traffic_2 = GREEN;
-			set_timer(6, 500);
-			turn_on_traffic_led_1(state_led_traffic_1);
-			turn_on_traffic_led_2(state_led_traffic_2);
-			is_on = 0;
 		break;
 		case NORMAL_MODE:
 			//TODO
-//			fsm_traffic_1_run();
-//			fsm_traffic_2_run();
-
-			blinking_led_traffic(state_led_traffic_1);
+			fsm_traffic_1_run();
+			fsm_traffic_2_run();
 			//STATE STRANSITION
 			//button 0 is pressed,  NORMAl_MODE -> MODIFY_RED_MODE
 			if(is_pressed(1)){
